@@ -4,19 +4,18 @@ http://www.ni.com/download/labview-run-time-engine-2016/6066/en/
 
 https://www.ni.com/zh-tw/support/downloads/drivers/download.ni-488-2.html#305442
 
-11 void InvertUint8(unsigned char *DesBuf, unsigned char *SrcBuf)
- 12 {
- 13     int i;
- 14     unsigned char temp = 0;
- 15     
- 16     for(i = 0; i < 8; i++)
- 17     {
- 18         if(SrcBuf[0] & (1 << i))
- 19         {
- 20             temp |= 1<<(7-i);
- 21         }
- 22     }
- 23     DesBuf[0] = temp;
- 24 } 
-
+36 void InvertUint16(unsigned short *DesBuf, unsigned short *SrcBuf)  
+ 37 {  
+ 38     int i;  
+ 39     unsigned short temp = 0;    
+ 40     
+ 41     for(i = 0; i < 16; i++)  
+ 42     {  
+ 43         if(SrcBuf[0] & (1 << i))
+ 44         {          
+ 45             temp |= 1<<(15 - i);  
+ 46         }
+ 47     }  
+ 48     DesBuf[0] = temp;  
+ 49 }
 
